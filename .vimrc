@@ -3,6 +3,7 @@ set cursorline
 set relativenumber
 set backspace=indent,eol,start " make backspace key work as it should on Insert mode
 set autoindent
+
 " YAML config, taken from https://www.arthurkoziel.com/setting-up-vim-for-yaml/
 autocmd FileType yaml setlocal ts=2 sts=2 sw=0 
 set foldlevelstart=20
