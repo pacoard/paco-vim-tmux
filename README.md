@@ -1,4 +1,4 @@
-# paco_vim_tmux
+# paco-vim-tmux
 Vim and Tmux config files to use repeatedly
 
 ## Vim Plugins
