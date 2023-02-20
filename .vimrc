@@ -3,16 +3,9 @@ set cursorline
 set relativenumber
 set backspace=indent,eol,start " make backspace key work as it should on Insert mode
 set autoindent
-
+set foldlevelstart=20
 " YAML config, taken from https://www.arthurkoziel.com/setting-up-vim-for-yaml/
 " requires installing 'yamllint' - brew install yamllint
-autocmd FileType yaml setlocal ts=2 sts=2 sw=0 set foldlevelstart=20
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_lint_on_text_changed = 'never'
-
-let g:ale_linters = {'python': ['pylint']}
 
 " LEADER mappings (currently forward slash `\`) 
 " get git blame in current line
@@ -70,7 +63,8 @@ call plug#end()
 " COLORSCHEME config
 colorscheme gruvbox
 
-" YAML config
+" YAML config, taken from https://www.arthurkoziel.com/setting-up-vim-for-yaml/
+" requires installing 'yamllint' - brew install yamllint
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 set foldlevelstart=20
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -78,6 +72,8 @@ let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_text_changed = 'never'
 let g:indentLine_char = '⦙'
+
+let g:ale_linters = {'python': ['pylint']}
 
 " Python config
 "let g:jedi#environment_path = "/usr/bin/python3.9"
