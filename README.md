@@ -1,6 +1,10 @@
 # paco-vim-tmux
 Vim and Tmux config files to use repeatedly
 
+## Prerequisites
+```bash
+brew install rg the_silver_searcher yamllint
+```
 ## Vim Plugins
 - Gruvbox colorscheme
 - Lightline

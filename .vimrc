@@ -5,8 +5,8 @@ set backspace=indent,eol,start " make backspace key work as it should on Insert 
 set autoindent
 
 " YAML config, taken from https://www.arthurkoziel.com/setting-up-vim-for-yaml/
-autocmd FileType yaml setlocal ts=2 sts=2 sw=0 
-set foldlevelstart=20
+" requires installing 'yamllint' - brew install yamllint
+autocmd FileType yaml setlocal ts=2 sts=2 sw=0 set foldlevelstart=20
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
@@ -46,7 +46,7 @@ Plug 'https://github.com/morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 " Syntax and indentation for many languages
 Plug 'sheerun/vim-polyglot'
-" Fuzzy search
+" Fuzzy search - requires installing 'rg' and 'ag' for searching in files - brew install rg the_silver_searcher
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
