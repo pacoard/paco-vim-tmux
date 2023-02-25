@@ -15,6 +15,9 @@ nnoremap <Leader>p "*p
 " copy into clipboard
 nnoremap <Leader>c "*y
 
+" Set encoding for NERDTree icons to show properly
+set encoding=UTF-8
+
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -42,7 +45,10 @@ Plug 'sheerun/vim-polyglot'
 " Fuzzy search - requires installing 'rg' and 'ag' for searching in files - brew install rg the_silver_searcher
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
+" File explorer customizations
+Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 " Git blame, I use it with <LEADER>s on a line
 Plug 'zivyangll/git-blame.vim'
 " YAML plugins
@@ -77,6 +83,9 @@ let g:ale_linters = {'python': ['pylint']}
 
 " Python config
 "let g:jedi#environment_path = "/usr/bin/python3.9"
+"
+" NERDTree config
+let NERDTreeShowHidden=1
 
 " BOTTOM STATUS LINE config
 set laststatus=2
