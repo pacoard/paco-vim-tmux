@@ -2,10 +2,8 @@ set number
 set cursorline
 set relativenumber
 set backspace=indent,eol,start " make backspace key work as it should on Insert mode
-set autoindent
+" set autoindent
 set foldlevelstart=20
-" YAML config, taken from https://www.arthurkoziel.com/setting-up-vim-for-yaml/
-" requires installing 'yamllint' - brew install yamllint
 
 " LEADER mappings (currently forward slash `\`) 
 " get git blame in current line
@@ -14,7 +12,10 @@ nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 nnoremap <Leader>p "*p
 " copy into clipboard
 nnoremap <Leader>c "*y
-
+" open NERDTree
+nnoremap <leader>n :NERDTree <Cr>
+" open new Floaterm window
+nnoremap <leader>f :FloatermNew <Cr>
 " Set encoding for NERDTree icons to show properly
 set encoding=UTF-8
 
@@ -57,6 +58,8 @@ Plug 'pedrohdz/vim-yaml-folds'
 Plug 'Yggdroot/indentLine'
 " Python - mostly followed this guy https://casas-alejandro.medium.com/your-ultimate-vim-setup-for-python-b43a522b1152 
 Plug 'davidhalter/jedi-vim' " autocompletion with CTRL-space
+" Floaterm
+Plug 'voldikss/vim-floaterm'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -94,11 +97,10 @@ set ttimeout ttimeoutlen=50  " fix going from insert mode to normal mode status 
 " Available colors are: one solarized wombat papercolor everforest gruvbox || Each has a dark and
 " light version according to the set background option. || default is powerline
 let g:lightline = {
-    \ 'colorscheme': 'wombat',
-    \ 'active': {
-        \ 'left': [ [ 'mode' ], [ 'readonly', 'absolutepath', 'modified' ] ],
-        \ 'right': [ [ 'lineinfo' ],[ 'percent' ],[ 'filetype'] ] },
-        \ 'component': {
-            \ 'charvaluehex': '0x%B'
-        \ },
-    \ }
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'left': [ [ 'mode' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+  \   'right': [ [ 'lineinfo' ],[ 'percent' ],[ 'filetype'] ] 
+  \ },
+  \ 'component': { 'charvaluehex': '0x%B' },
+  \ }
